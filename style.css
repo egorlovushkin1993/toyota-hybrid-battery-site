@@ -90,40 +90,61 @@ header nav.main-nav .logo {
 
 /* Logo image and text styling within the navigation bar */
 header nav.main-nav .logo img {
-  /* Increase the logo size further and ensure it remains crisp on high‑resolution displays. */
-  width: 100px;
+  /* Increase the logo size further and ensure it remains crisp on high‑resolution displays.
+   * Enlarging the logo makes the branding more prominent, matching the original site's
+   * large centre‑aligned icon. */
+  /* Increase the logo size again for greater prominence. Users commented that the logo
+   * was still too small after the previous update. A larger width ensures the
+   * branding stands out, similar to the original site where the icon is a focal point. */
+  width: 220px;
   height: auto;
   margin: 0;
   vertical-align: middle;
 }
 
 header nav.main-nav .logo span {
-  /* Enlarge the company name and add subtle letter‑spacing for a polished look */
-  margin-top: 0.35rem;
+  /* Enlarge the company name and add subtle letter‑spacing for a polished look.
+   * A larger font size improves visibility of the brand name and harmonises with the larger icon. */
+  margin-top: 0.4rem;
   vertical-align: middle;
   color: var(--primary-color);
-  font-size: 1.8rem;
-  letter-spacing: 0.02em;
+  /* Boost the font size of the company name to improve visibility and scale with
+   * the enlarged icon. This adjustment ensures the text doesn't appear dwarfed by
+   * the logo graphic and remains the dominant element in the header. */
+  font-size: 2.5rem;
+  letter-spacing: 0.03em;
 }
 
 header nav.main-nav ul {
-  /* Position navigation links in a row beneath the logo and centre them */
+  /* Position navigation links in a row beneath the logo and stretch them across the full width */
   list-style: none;
   padding: 0;
-  margin: 0.5rem 0 0 0;
+  margin: 1rem 0 0 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0;
 }
 
 header nav.main-nav ul li {
   margin: 0;
+  /* Each navigation item flexes to fill the available space equally */
+  flex: 1;
+  text-align: center;
 }
 
 header nav.main-nav ul li a {
   color: var(--primary-color);
-  font-weight: 500;
+  font-weight: 600;
+  display: block;
+  /* Increase padding and font size to make menu items more substantial and easier to tap or click.
+   * Stretch each link vertically and horizontally to fill the available space and enhance legibility. */
+  /* Increase padding and font size further so the navigation links span the full width
+   * of the bar and are easier to tap on mobile devices. This creates a more balanced
+   * distribution of space across the nav bar and aligns with modern design standards. */
+  padding: 1rem 0;
+  font-size: 1.25rem;
   transition: color 0.2s ease;
 }
 
