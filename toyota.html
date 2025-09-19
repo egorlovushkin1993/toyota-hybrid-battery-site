@@ -8,28 +8,23 @@
   </head>
   <body>
     <header>
-      <!-- Top information bar with tagline and phone number -->
       <div class="top-bar">
         <span class="tagline"
           >Serving San Diego County Since 2007 | Hybrid Battery Repairs,
-          Rebuilds &amp; Electric Battery Repairs</span
+          Hybrid Battery Rebuilds &amp; Electric Battery Repairs</span
         >
         <span class="phone">Call Today: 619‑481‑4400</span>
       </div>
-      <!-- Main navigation bar -->
       <nav class="main-nav">
-        <!-- Logo with text; the image is placed before the company name -->
         <div class="logo">
           <img src="logo.jpeg" alt="Hybrid Battery Hub logo" />
           <span>Hybrid Battery Hub</span>
         </div>
         <ul>
-          <!-- Link to the home page. The root of the site doubles as the Toyota page. -->
           <li><a href="index.html">Home</a></li>
-          <!-- Each navigation item now points to its own dedicated page instead of an on‑page anchor -->
           <li><a href="about.html">About&nbsp;Us</a></li>
           <li><a href="warranty.html">Warranty</a></li>
-          <li><a href="vehicles.html">Vehicles &amp; Costs</a></li>
+          <li><a href="vehicles.html" class="active">Vehicles &amp; Costs</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -37,7 +32,7 @@
     </header>
 
     <main>
-      <!-- Hero section introducing services -->
+      <!-- Hero section introducing Toyota services -->
       <section class="hero">
         <h1>
           Professional Toyota Hybrid Battery Repair &amp; Replacement Services
@@ -97,7 +92,7 @@
         <div class="model-cards">
           <!-- Prius IC model -->
           <div class="model-card">
-          <img
+            <img
               src="prius-ic.png"
               alt="Toyota Prius first generation hybrid car"
             />
@@ -116,13 +111,16 @@
                   <strong>3‑Year Warranty:</strong> New Modules Rebuild –
                   <span>Call for pricing</span>
                 </li>
-                <li class="note">Additional warranty options available; installation costs not included.</li>
+                <li class="note"
+                  >Additional warranty options available; installation costs
+                  not included.</li
+                >
               </ul>
             </div>
           </div>
           <!-- Prius IV model -->
           <div class="model-card">
-          <img
+            <img
               src="prius.png"
               alt="Toyota Prius hybrid car"
             />
@@ -141,13 +139,16 @@
                   <strong>3‑Year Warranty:</strong> New Modules Rebuild –
                   <span>Call for pricing</span>
                 </li>
-                <li class="note">Additional warranty options available; installation costs not included.</li>
+                <li class="note"
+                  >Additional warranty options available; installation costs
+                  not included.</li
+                >
               </ul>
             </div>
           </div>
           <!-- Camry model -->
           <div class="model-card">
-          <img
+            <img
               src="camry.png"
               alt="Toyota Camry hybrid car"
             />
@@ -166,13 +167,16 @@
                   <strong>3‑Year Warranty:</strong> New Modules Rebuild –
                   <span>Call for pricing</span>
                 </li>
-                <li class="note">Additional warranty options available; installation costs not included.</li>
+                <li class="note"
+                  >Additional warranty options available; installation costs
+                  not included.</li
+                >
               </ul>
             </div>
           </div>
           <!-- Avalon model -->
           <div class="model-card">
-          <img
+            <img
               src="avalon.png"
               alt="Toyota Avalon hybrid car"
             />
@@ -191,14 +195,16 @@
                   <strong>3‑Year Warranty:</strong> New Modules Rebuild –
                   <span>Call for pricing</span>
                 </li>
-                <li class="note">Additional warranty options available; installation costs not included.</li>
+                <li class="note"
+                  >Additional warranty options available; installation costs
+                  not included.</li
+                >
               </ul>
             </div>
           </div>
         </div>
-        <!-- Placeholder container shown when non‑Toyota model is selected -->
-        <div class="model-placeholder" id="modelPlaceholder">
-          <!-- The message will be filled dynamically via JavaScript -->
+        <!-- Placeholder container hidden on this page -->
+        <div class="model-placeholder" id="modelPlaceholder" style="display: none;">
           Information for this vehicle brand is coming soon. Please contact us for more details.
         </div>
       </section>
@@ -349,8 +355,8 @@
             <h3>Eco‑Friendly Commitment</h3>
             <p>
               Our repair‑first approach reduces waste and supports
-              environmentally conscious practices without compromising quality or
-              performance.
+              environmentally conscious practices without compromising quality
+              or performance.
             </p>
           </div>
           <div class="feature">
@@ -411,7 +417,5 @@
         Open Monday–Sunday, 9am–6pm.
       </p>
     </footer>
-
-    <!-- No additional scripts needed on the home page -->
   </body>
 </html>
