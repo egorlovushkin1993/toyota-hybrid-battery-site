@@ -95,8 +95,8 @@
         <div class="model-cards">
           <!-- Prius IC model -->
           <div class="model-card">
-            <img
-              src="images/prius-ic.png"
+          <img
+              src="prius-ic.png"
               alt="Toyota Prius first generation hybrid car"
             />
             <div class="card-content">
@@ -120,8 +120,8 @@
           </div>
           <!-- Prius IV model -->
           <div class="model-card">
-            <img
-              src="images/prius.png"
+          <img
+              src="prius.png"
               alt="Toyota Prius hybrid car"
             />
             <div class="card-content">
@@ -145,8 +145,8 @@
           </div>
           <!-- Camry model -->
           <div class="model-card">
-            <img
-              src="images/camry.png"
+          <img
+              src="camry.png"
               alt="Toyota Camry hybrid car"
             />
             <div class="card-content">
@@ -170,8 +170,8 @@
           </div>
           <!-- Avalon model -->
           <div class="model-card">
-            <img
-              src="images/avalon.png"
+          <img
+              src="avalon.png"
               alt="Toyota Avalon hybrid car"
             />
             <div class="card-content">
@@ -193,6 +193,11 @@
               </ul>
             </div>
           </div>
+        </div>
+        <!-- Placeholder container shown when non‑Toyota model is selected -->
+        <div class="model-placeholder" id="modelPlaceholder">
+          <!-- The message will be filled dynamically via JavaScript -->
+          Information for this vehicle brand is coming soon. Please contact us for more details.
         </div>
       </section>
 
@@ -404,5 +409,56 @@
         Open Monday–Sunday, 9am–6pm.
       </p>
     </footer>
+
+    <!-- Simple script to handle sidebar navigation for vehicle models -->
+    <script>
+      // Attach click handlers to all model links in the sidebar
+      document.querySelectorAll('.sidebar a').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          // Prevent default anchor behaviour
+          event.preventDefault();
+          // Remove active class from all links
+          document.querySelectorAll('.sidebar a').forEach(function (l) {
+            l.classList.remove('active');
+          });
+          // Add active class to the clicked link
+          this.classList.add('active');
+
+          // Determine which brand was clicked
+          var brand = this.textContent.trim();
+          var cardsContainer = document.querySelector('.model-cards');
+          var placeholder = document.getElementById('modelPlaceholder');
+
+          // Show Toyota models or display placeholder for other brands
+          if (brand.toLowerCase() === 'toyota') {
+            // Show the cards and hide the placeholder
+            if (cardsContainer) {
+              cardsContainer.style.display = 'flex';
+            }
+            if (placeholder) {
+              placeholder.style.display = 'none';
+            }
+          } else {
+            // Hide the cards and show a message about the selected brand
+            if (cardsContainer) {
+              cardsContainer.style.display = 'none';
+            }
+            if (placeholder) {
+              placeholder.textContent =
+                'Information for ' +
+                brand +
+                ' hybrid battery models is coming soon. Please contact us for details.';
+              placeholder.style.display = 'block';
+            }
+          }
+
+          // Smooth scroll to the models section
+          var modelsSection = document.getElementById('models');
+          if (modelsSection) {
+            modelsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
