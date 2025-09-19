@@ -8,13 +8,20 @@
 
 /* Colour variables for easy theming */
 :root {
-  --primary-color: #00274d; /* deep navy for backgrounds */
-  --secondary-color: #ffd700; /* gold for highlights */
-  --accent-color: #f4a261; /* soft orange accent */
-  --dark-bg: #041c32; /* darkest background */
-  --light-bg: #f5f5f5; /* light backgrounds */
-  --text-color: #333333; /* default text colour */
-  --heading-color: #00274d;
+  /*
+   * Updated colour palette for a cleaner, more modern look.
+   * The primary colour is a rich blue used for text and accents; the
+   * secondary colour provides contrast for call‑to‑action elements. A
+   * soft coral accent ties headings and hover states together. Light
+   * backgrounds help separate sections and create breathing room.
+   */
+  --primary-color: #0a355c;
+  --secondary-color: #ffd700;
+  --accent-color: #e76f51;
+  --dark-bg: #0f4a81;
+  --light-bg: #fafafa;
+  --text-color: #333333;
+  --heading-color: #0a355c;
 }
 
 /* General resets */
@@ -24,7 +31,8 @@
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  /* Use a modern sans‑serif font stack for improved readability */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   color: var(--text-color);
   background-color: var(--light-bg);
@@ -40,8 +48,9 @@ a:hover {
 }
 
 header .top-bar {
-  background: var(--primary-color);
-  color: var(--light-bg);
+  /* Lighter top bar with subtle border for a less intrusive header */
+  background: #f7f7f7;
+  color: var(--primary-color);
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   display: flex;
@@ -52,75 +61,94 @@ header .top-bar {
 
 header .top-bar .phone {
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 header nav.main-nav {
-  background: var(--dark-bg);
-  padding: 0.75rem 1rem;
+  /* The navigation bar now stacks the logo above the links and uses a
+   * light background with a subtle border. Elements are centred to
+   * emphasise the branding and improve visual hierarchy. */
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 header nav.main-nav .logo {
-  font-size: 1.4rem;
+  /* Centre the logo content and stack image and text vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 /* Logo image and text styling within the navigation bar */
 header nav.main-nav .logo img {
-  width: 40px;
+  /* Increase the logo size further and ensure it remains crisp on high‑resolution displays. */
+  width: 100px;
   height: auto;
-  margin-right: 0.5rem;
+  margin: 0;
   vertical-align: middle;
 }
 
 header nav.main-nav .logo span {
+  /* Enlarge the company name and add subtle letter‑spacing for a polished look */
+  margin-top: 0.35rem;
   vertical-align: middle;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
 }
 
 header nav.main-nav ul {
+  /* Position navigation links in a row beneath the logo and centre them */
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.5rem 0 0 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 header nav.main-nav ul li {
-  margin-left: 1rem;
+  margin: 0;
 }
 
 header nav.main-nav ul li a {
-  color: var(--light-bg);
+  color: var(--primary-color);
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 header nav.main-nav ul li a:hover {
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 /* Hero section */
 .hero {
-  background: var(--dark-bg);
-  color: var(--light-bg);
-  padding: 2rem 1rem;
-  text-align: left;
+  /* Modern hero uses a gradient background and centres its content */
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: #ffffff;
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
 }
 
 .hero p {
-  margin-bottom: 0.8rem;
-  max-width: 800px;
+  margin: 0 auto 1rem auto;
+  max-width: 600px;
 }
 
 .hero .tel-link {
@@ -138,10 +166,11 @@ header nav.main-nav ul li a:hover {
 
 .sidebar {
   flex: 0 0 220px;
-  background: var(--dark-bg);
-  color: var(--light-bg);
+  background: #ffffff;
+  color: var(--primary-color);
   padding: 1rem;
   border-radius: 4px;
+  border: 1px solid #e0e0e0;
   height: fit-content;
 }
 
@@ -149,7 +178,7 @@ header nav.main-nav ul li a:hover {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .sidebar ul {
@@ -163,16 +192,16 @@ header nav.main-nav ul li a:hover {
 }
 
 .sidebar ul li a {
-  color: var(--light-bg);
+  color: var(--primary-color);
   display: block;
   padding: 0.25rem 0;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
   transition: color 0.2s ease;
 }
 
 .sidebar ul li a:hover,
-.sidebar ul li a.active {
-  color: var(--secondary-color);
+  .sidebar ul li a.active {
+  color: var(--accent-color);
 }
 
 .model-cards {
@@ -301,14 +330,15 @@ header nav.main-nav ul li a:hover {
 /* Signs section */
 .signs {
   padding: 2rem 1rem;
-  background: var(--dark-bg);
-  color: var(--light-bg);
+  /* Use a light background and dark text for improved contrast */
+  background: #ffffff;
+  color: var(--primary-color);
 }
 
 .signs h2 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-align: center;
 }
 
