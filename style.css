@@ -1,0 +1,461 @@
+/*
+ * Stylesheet for the Toyota hybrid battery services web page.
+ *
+ * The design uses a dark navy primary colour with gold accents to
+ * differentiate it from the original site. Responsive layouts
+ * ensure the content remains legible on smaller screens.
+ */
+
+/* Colour variables for easy theming */
+:root {
+  --primary-color: #00274d; /* deep navy for backgrounds */
+  --secondary-color: #ffd700; /* gold for highlights */
+  --accent-color: #f4a261; /* soft orange accent */
+  --dark-bg: #041c32; /* darkest background */
+  --light-bg: #f5f5f5; /* light backgrounds */
+  --text-color: #333333; /* default text colour */
+  --heading-color: #00274d;
+}
+
+/* General resets */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header .top-bar {
+  background: var(--primary-color);
+  color: var(--light-bg);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .top-bar .phone {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+header nav.main-nav {
+  background: var(--dark-bg);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header nav.main-nav .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+header nav.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header nav.main-nav ul li {
+  margin-left: 1rem;
+}
+
+header nav.main-nav ul li a {
+  color: var(--light-bg);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+header nav.main-nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Hero section */
+.hero {
+  background: var(--dark-bg);
+  color: var(--light-bg);
+  padding: 2rem 1rem;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.hero p {
+  margin-bottom: 0.8rem;
+  max-width: 800px;
+}
+
+.hero .tel-link {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+/* Models section */
+.models {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.sidebar {
+  flex: 0 0 220px;
+  background: var(--dark-bg);
+  color: var(--light-bg);
+  padding: 1rem;
+  border-radius: 4px;
+  height: fit-content;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar ul li a {
+  color: var(--light-bg);
+  display: block;
+  padding: 0.25rem 0;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  transition: color 0.2s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  color: var(--secondary-color);
+}
+
+.model-cards {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.model-card {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.model-card img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.model-card .card-content {
+  flex: 1 1 0;
+}
+
+.model-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.model-card h3 .sub {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+}
+
+.pricing {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.pricing span {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.pricing .note {
+  font-size: 0.8rem;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+/* Expert models grid */
+.expert-models {
+  padding: 2rem 1rem;
+  background: #ffffff;
+}
+
+.expert-models h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.model-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.model-info {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.model-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.model-info h3 .sub {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+}
+
+.model-info p {
+  margin-bottom: 0.6rem;
+  font-size: 0.92rem;
+}
+
+/* Signs section */
+.signs {
+  padding: 2rem 1rem;
+  background: var(--dark-bg);
+  color: var(--light-bg);
+}
+
+.signs h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.signs ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.signs li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.signs p {
+  font-size: 0.95rem;
+}
+
+/* Warranty options */
+.warranty-options {
+  padding: 2rem 1rem;
+  background: #ffffff;
+}
+
+.warranty-options h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.warranty-options p {
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.warranty-options ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+}
+
+.warranty-options ul li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.warranty-options ul li::before {
+  content: "\2022";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Choose-us section */
+.choose-us {
+  padding: 2rem 1rem;
+  background: var(--light-bg);
+}
+
+.choose-us h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature {
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  padding: 1.5rem;
+}
+
+.feature h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.feature p {
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* Call to action */
+.cta {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--dark-bg);
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.cta-button:hover {
+  background: var(--accent-color);
+}
+
+/* FAQs section */
+.faqs {
+  padding: 2rem 1rem;
+  background: #ffffff;
+}
+
+.faqs h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq:last-child {
+  border-bottom: none;
+}
+
+.faq h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.faq p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+footer {
+  background: var(--primary-color);
+  color: var(--light-bg);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .models {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .model-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .model-card img {
+    margin: 0 0 1rem 0;
+  }
+}
